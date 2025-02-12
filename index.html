@@ -1,11 +1,13 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Profile of SungYong, EOM</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <style>
         body { background: #F2F4F7; font-size: 0.95rem; }
         .box { background: #fff; padding: 1.5rem; }
@@ -20,119 +22,332 @@
             100% { opacity: 1; }
         }
         .font-090 { font-size: 90%; }
+        .font-100 { font-size: 1rem; }
+        .font-130 { font-size: 1.3rem; }
         .font-150 { font-size: 150%; }
     </style>
 </head>
 
 <body>
     <div class="container-xl">
-        <h1><b>Profile of SungYong, EOM</b></h1>
+        <h1>
+            <div class="d-flex justify-content-between align-items-center">
+                <div>Profile of SungYong, EOM</div>
+                <div class="font-130">
+                    <i class="bi bi-filetype-pdf"></i>
+                    <i class="bi bi-printer"></i>
+                </div>
+            </div> 
+        </h1>
 
-        <div class="box mt-5">
-            <div class="row g-1">
-                <div class="col-12 mb-3">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div style="font-size: 1.5rem;">
-                            <b>엄성용</b>
-                            <span style="font-size: 70%; margin-left: 0.25rem; color: #777">남</span>
-                            <span style="font-size: 70%; margin-left: 0.25rem; color: #777">1979년</span>
-                        </div>
-                        <div>
-                            <span class="text-danger blink">구직중</span>
+        <div class="mt-5 print-area">
+            <div class="box mt-5">
+                <div class="row g-1">
+                    <div class="col-12 mb-3">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div style="font-size: 1.5rem;">
+                                <b>엄성용</b>
+                                <span style="font-size: 70%; margin-left: 0.25rem; color: #777">남</span>
+                                <span style="font-size: 70%; margin-left: 0.25rem; color: #777">1979년</span>
+                            </div>
+                            <div>
+                                <span class="text-danger blink">구직중</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-6 col-12">
-                    <span style="font-weight: bold;">휴대폰</span>
-                    <span style="margin-left: 0.25rem;">010-5942-1002</span>                
-                </div>
-                <div class="col-md-6 col-12">
-                    <span style="font-weight: bold;">이메일</span>
-                    <span style="margin-left: 0.25rem;">bluei98@gmail.com</span>            
-                </div>
-                <div class="col-md-12 col-12">
-                    <span style="font-weight: bold;">홈페이지</span>
-                    <span style="margin-left: 0.25rem;">https://www.harulogs.com</span>           
-                </div>
-                <div class="col-md-12 col-12">
-                    <span style="font-weight: bold;">지역</span>
-                    <span style="margin-left: 0.25rem;">대전</span>           
+                    <div class="col-md-6 col-12">
+                        <span style="font-weight: bold;">휴대폰</span>
+                        <span style="margin-left: 0.25rem;"><a href="tel:010-5942-1002">010-5942-1002</a></span>                
+                    </div>
+                    <div class="col-md-6 col-12">
+                        <span style="font-weight: bold;">이메일</span>
+                        <span style="margin-left: 0.25rem;"><a href="mailto:bluei98@gmail.com">bluei98@gmail.com</a></span>            
+                    </div>
+                    <div class="col-md-12 col-12">
+                        <span style="font-weight: bold;">홈페이지</span>
+                        <span style="margin-left: 0.25rem;">https://www.harulogs.com</span>           
+                    </div>
+                    <div class="col-md-12 col-12">
+                        <span style="font-weight: bold;">지역</span>
+                        <span style="margin-left: 0.25rem;">대전</span>           
+                    </div>
                 </div>
             </div>
+            <div class="box mt-4">
+                <div class="row g-3 mb-4 font-090">
+                    <div class="col-md-3 col-6 border-end text-center">
+                        <div class="text-muted fw-bold">학력</div>
+                        <div class="mt-2">충남대</div>
+                        <div class="text-primary">대학교(4년)</div>
+                        <div class="text-primary">졸업</div>
+                    </div>
+                    <div class="col-md-3 col-6 border-end text-center">
+                        <div class="text-muted fw-bold">경력</div>
+                        <div class="mt-2 text-primary"><span class="experienceDuration"></span>년</div>
+                    </div>
+                    <!-- <div class="col-md-3 col-6 border-end text-center">
+                        <div class="text-muted">학력</div>
+                        <div class="mt-2">충남대</div>
+                        <div class="text-primary">대학교(4년)</div>
+                        <div class="text-primary">졸업</div>
+                    </div>
+                    <div class="col-md-3 col-6 text-center">
+                        <div class="text-muted">학력</div>
+                        <div class="mt-2">충남대</div>
+                        <div class="text-primary">대학교(4년)</div>
+                        <div class="text-primary">졸업</div>
+                    </div> -->
+                </div>
+                <div>
+                    <div class="fw-bold border-bottom mb-1">Language</div>
+                    <img src="https://img.shields.io/badge/PHP-777BB4?style=flat-square&logo=php&logoColor=white" alt="PHP Badge">
+                    <img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=node.js&logoColor=white" alt="Node.js Badge">
+                    <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python Badge">
+                    <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" alt="JavaScript Badge">
+                    <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white" alt="HTML5 Badge">
+                    <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white" alt="CSS3 Badge">
+                    <img src="https://img.shields.io/badge/Sass-CC6699?style=flat-square&logo=sass&logoColor=white" alt="Sass Badge">
+                    
+                    <div class="fw-bold border-bottom mt-3 mb-1">Database</div>
+                    <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white" alt="MySQL Badge">
+                    <img src="https://img.shields.io/badge/MariaDB-003545?style=flat-square&logo=mariadb&logoColor=white" alt="MariaDB Badge">
+                    <img src="https://img.shields.io/badge/Microsoft%20SQL%20Server-CC2927?style=flat-square&logo=microsoft-sql-server&logoColor=white" alt="MSSQL Badge">
+                    <img src="https://img.shields.io/badge/PostgreSQL-336791?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL Badge">
+                    <img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white" alt="Redis Badge">
+                    <img src="https://img.shields.io/badge/Elasticsearch-005571?style=flat-square&logo=elasticsearch&logoColor=white" alt="Elasticsearch Badge">
+    
+                    <div class="fw-bold border-bottom mt-3 mb-1">Framework</div>
+                    <img src="https://img.shields.io/badge/Bootstrap-7952B3?style=flat-square&logo=bootstrap&logoColor=white" alt="Bootstrap Badge">
+                    <img src="https://img.shields.io/badge/CodeIgniter-EF4223?style=flat-square&logo=codeigniter&logoColor=white" alt="CodeIgniter Badge">
+                    <img src="https://img.shields.io/badge/Laravel-FF2D20?style=flat-square&logo=laravel&logoColor=white" alt="Laravel Badge">
+                    <img src="https://img.shields.io/badge/Symfony-000000?style=flat-square&logo=symfony&logoColor=white" alt="Symfony Badge">
+                    <img src="https://img.shields.io/badge/Express.js-000000?style=flat-square&logo=express&logoColor=white" alt="Express.js Badge">
+                    <img src="https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js&logoColor=white" alt="Next.js Badge">
+                    <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black" alt="React Badge">
+                    <img src="https://img.shields.io/badge/Electron-47848F?style=flat-square&logo=electron&logoColor=white" alt="Electron Badge">
+                    
+                    <div class="fw-bold border-bottom mt-3 mb-1">OS & Cloud Computing</div>
+                    <img src="https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black" alt="Linux Badge">
+                    <img src="https://img.shields.io/badge/Ubuntu-E95420?style=flat-square&logo=ubuntu&logoColor=white" alt="Ubuntu Badge">
+                    <img src="https://img.shields.io/badge/CentOS-262577?style=flat-square&logo=centos&logoColor=white" alt="CentOS Badge">
+                    <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker Badge">
+                    <img src="https://img.shields.io/badge/Amazon%20Web%20Services-232F3E?style=flat-square&logo=amazon-aws&logoColor=white" alt="Amazon Web Services Badge">
+                    <img src="https://img.shields.io/badge/Vultr-007BFC?style=flat-square&logo=vultr&logoColor=white" alt="Vultr Badge">
+    
+                </div>
+            </div>
+    
+            <h2 class="font-150 mt-5">자기소개서</h2>
+            <div class="box">
+                <div>
+                    <p class="my-1">저는 1999년, 주식회사 카페24의 초기 멤버로 웹 개발을 시작하였습니다. 그 당시, 인터넷 환경은 지금처럼 발전하지 않았고, 웹 서비스의 기초부터 확립해야 했습니다. 이러한 과정에서 저는 웹 개발의 기초부터 고급 기술에 이르기까지 폭넓은 경험을 쌓았습니다. 특히, PHP, Node.js, Python을 활용하여 웹 서비스 개발에 참여하며, 다양한 시스템과 기술을 다루었습니다. 이를 통해 웹 개발자로서의 기본기를 탄탄히 다질 수 있었고, 이후 풀스택 개발자로 성장할 수 있었습니다.</p>
+                    <p class="my-1">제 경력은 단순히 기술적인 능력에만 그치지 않았습니다. 서버, 데이터베이스, 클라우드 서비스 등 전체적인 기술 스택을 폭넓게 이해하고 다룰 수 있는 능력을 키웠습니다. 이를 바탕으로, 서비스의 설계부터 개발, 배포, 운영에 이르기까지 전반적인 업무를 처리할 수 있는 능력을 갖추게 되었습니다. 특히, 서버와 데이터베이스의 관리뿐만 아니라, 클라우드 서비스를 활용한 인프라 설계와 운영도 가능하여, 프로젝트를 처음부터 끝까지 안정적으로 이끌어갈 수 있습니다.</p>
+                    <p class="my-1">또한, 다양한 프로젝트를 진행하며 팀 구성과 운영 경험을 쌓았습니다. 효율적인 커뮤니케이션과 협업을 통해 프로젝트가 원활히 진행될 수 있도록 도왔으며, 이를 통해 팀 내에서 중요한 역할을 맡아 프로젝트를 성공적으로 이끌었습니다. 기술적인 부분을 넘어, 사업적 관점에서도 큰 관심을 두고 일을 해왔습니다. 아이디어의 실현을 위해 기획 및 설계를 진행하고, 마케팅 전략을 통해 서비스의 성장을 이끌어내는 과정에서 중요한 역할을 했습니다. 사업 운영에 필요한 전략적 사고와 기술적 해결책을 융합하여, 서비스의 성공적인 성장과 확장을 이끌어내는 데 기여했습니다.</p>
+                    <p class="my-1">저는 기술적인 역량뿐만 아니라, 비즈니스적 측면에서의 실력도 갖춘 풀스택 개발자로서, 기술적 문제를 해결하는 데 그치지 않고, 사업적 성장과 서비스의 성공을 위해 노력해 왔습니다. 다양한 기술과 경험을 바탕으로 귀사의 프로젝트에 큰 기여를 할 수 있을 것이라 확신하며, 앞으로도 계속해서 혁신적이고 효율적인 방법으로 문제를 해결하고, 서비스를 발전시키는 데 주력할 것입니다.</p>
+                </div>
+            </div>
+    
+            <h2 class="font-150 mt-5">경력</h2>
+            <table class="table font-090 mb-5">
+                <colgroup><col width="20%"/></colgroup>
+                <tr>
+                    <th class="text-center py-3">2023.06 ~ 재직중</th>
+                    <td class="py-3">
+                        <div class="font-120">
+                            <span class="fw-bold">주식회사 코드샌드</span>
+                            <span class="ms-3 font-090 text-muted">CEO</span>
+                        </div>
+                        <div class="mt-2">e-Commerce, e-Learning 서비스 기획, 설계, 개발 및 운영</div>
+                        <div class="mt-3 text-muted">주요직무 | 서비스 기획, 서비스 개발, 서버 설계, 서버 운영, 마케팅, 기획</div>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="text-center py-3">2014.08 ~ 2023.05</th>
+                    <td class="py-3">
+                        <div class="font-120">
+                            <span class="fw-bold">주식회사 포렉스리가가</span>
+                            <span class="ms-3 font-090 text-muted">CEO</span>
+                        </div>
+                        <div class="mt-2">주식,선물,코인등의 실시간 시세 처리 및 커뮤니티 서비스 기획, 설계, 개발 운영 / 자동매매 시스템 개발 및 서비스</div>
+                        <div class="mt-3 text-muted">주요직무 | 서비스 기획, 서비스 개발, 서버 설계, 서버 운영, 마케팅, 기획</div>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="text-center py-3">2010.08 ~ 2014.08</th>
+                    <td class="py-3">
+                        <div class="font-120">
+                            <span class="fw-bold">에프엑스온</span>
+                            <span class="ms-3 font-090 text-muted">대표</span>
+                        </div>
+                        <div class="mt-2">주식,선물,코인등의 실시간 시세 처리 및 커뮤니티 서비스 기획, 설계, 개발 운영 / 자동매매 시스템 개발 및 서비스</div>
+                        <div class="mt-3 text-muted">주요직무 | 서비스 기획, 서비스 개발, 서버 설계, 서버 운영, 마케팅, 기획</div>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="text-center py-3">2008.01 ~ 2010.08</th>
+                    <td class="py-3">
+                        <div class="font-120">
+                            <span class="fw-bold">주식회사 세중게임즈</span>
+                            <span class="ms-3 font-090 text-muted">서비스팀 과장(선임연구원)</span>
+                        </div>
+                        <div class="mt-2">모바일 게임 퍼블리싱 사이트 개발 및 운영</div>
+                        <div class="mt-3 text-muted">주요직무 | 프로젝트 PM 및 서비스 개발</div>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="text-center py-3">2006.10 ~ 2007.10</th>
+                    <td class="py-3">
+                        <div class="font-120">
+                            <span class="fw-bold">주식회사 YNK JAPAN</span>
+                            <span class="ms-3 font-090 text-muted">웹개발팀 과장(선임연구원)</span>
+                        </div>
+                        <div class="mt-2">온라인 MMORPG 게임 퍼블리싱 사이트 개발</div>
+                        <div class="mt-3 text-muted">주요직무 | 프로젝트 PM 및 서비스 개발 및 운영</div>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="text-center py-3">2006.07 ~ 2006.10</th>
+                    <td class="py-3">
+                        <div class="font-120">
+                            <span class="fw-bold">주식회사 NCSOFT JAPAN</span>
+                            <span class="ms-3 font-090 text-muted">웹개발팀 팀원</span>
+                        </div>
+                        <div class="mt-2">온라인 MMORPG 게임 퍼블리싱 사이트 개발</div>
+                        <div class="mt-3 text-muted">주요직무 | 서비스 개발 및 운영</div>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="text-center py-3">2004.01 ~ 2006.06</th>
+                    <td class="py-3">
+                        <div class="font-120">
+                            <span class="fw-bold">주식회사 헤드온스</span>
+                            <span class="ms-3 font-090 text-muted">웹개발팀 팀원</span>
+                        </div>
+                        <div class="mt-2">SI (웹퍼블리싱) 업무</div>
+                        <div class="mt-3 text-muted">주요직무 | 서비스 기획, 설계, 개발 및 운영</div>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="text-center py-3">2002.02 ~ 2003.12</th>
+                    <td class="py-3">
+                        <div class="font-120">
+                            <span class="fw-bold">주식회사 인터컴소프트웨어</span>
+                            <span class="ms-3 font-090 text-muted">웹개발팀 팀원</span>
+                        </div>
+                        <div class="mt-2">서버, 네트워크 관리 솔루션 개발</div>
+                        <div class="mt-3 text-muted">주요직무 | 서비스 개발 및 운영</div>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="text-center py-3">2000.08 ~ 2002.02</th>
+                    <td class="py-3">
+                        <div class="font-120">
+                            <span class="fw-bold">주식회사 아이엔큐</span>
+                            <span class="ms-3 font-090 text-muted">웹개발팀 팀원</span>
+                        </div>
+                        <div class="mt-2">SI (웹퍼블리싱) 업무</div>
+                        <div class="mt-3 text-muted">주요직무 | 서비스 기획, 설계, 개발 및 운영</div>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="text-center py-3">2000.02 ~ 2000.08</th>
+                    <td class="py-3">
+                        <div class="font-120">
+                            <span class="fw-bold">주식회사 디엔정보통신</span>
+                            <span class="ms-3 font-090 text-muted">웹개발팀 팀원</span>
+                        </div>
+                        <div class="mt-3 text-muted">주요직무 | 서비스 기획, 설계, 개발 및 운영</div>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="text-center py-3">1999.08 ~ 2000.02</th>
+                    <td class="py-3">
+                        <div class="font-120">
+                            <span class="fw-bold">주식회사 카페24</span>
+                            <span class="ms-3 font-090 text-muted">웹개발팀 팀원</span>
+                        </div>
+                        <div class="mt-3 text-muted">주요직무 | 서비스 개발 및 운영</div>
+                    </td>
+                </tr>
+            </table>
+    
+            <h2 class="font-150 mt-5">어학</h2>
+            <div class="box">
+                <div class="d-flex py-3">
+                    <div class="fw-bold" style="min-width: 150px;">일본어</div>
+                    <div class="ms-5">비즈니스 회화가능</div>
+                </div>
+                <div class="d-flex py-3">
+                    <div class="fw-bold" style="min-width: 150px;">영어</div>
+                    <div class="ms-5">메일, 서류를 통한 업무 가능</div>
+                </div>
+            </div>
+    
+            <h2 class="font-150 mt-5">희망 근무 조건</h2>
+            <table class="table font-090 mb-5">
+            <colgroup><col width="20%"/><col width="40%"/><col width="40%"/></colgroup>
+            <tr>
+                <th class="text-center bg-light" style="vertical-align: middle;">대전</th>
+                <td>
+                    <table class="table font-090 mb-0" style="border-style: hidden;">
+                    <colgroup><col width="20%"/></colgroup>
+                    <tr>
+                        <th>고용형태</th>
+                        <td>정규직</td>
+                    </tr>
+                    <tr>
+                        <th>희망직급</th>
+                        <td>CTO</td>
+                    </tr>
+                    <tr>
+                        <th>희망연봉</th>
+                        <td>13,200만원</td>
+                    </tr>
+                    </table>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <th class="text-center bg-light" style="vertical-align: middle;">타지역</th>
+                <td>
+                    <table class="table font-090 mb-0" style="border-style: hidden;">
+                    <colgroup><col width="20%"/></colgroup>
+                    <tr>
+                        <th>고용형태</th>
+                        <td>정규직</td>
+                    </tr>
+                    <tr>
+                        <th>희망직급</th>
+                        <td>CTO</td>
+                    </tr>
+                    <tr>
+                        <th>희망연봉</th>
+                        <td>18,000만원</td>
+                    </tr>
+                    </table>
+                </td>
+                <td>
+                    <table class="table font-090 mb-0" style="border-style: hidden;">
+                    <colgroup><col width="20%"/></colgroup>
+                    <tr>
+                        <th>고용형태</th>
+                        <td>재택근무</td>
+                    </tr>
+                    <tr>
+                        <th>희망직급</th>
+                        <td>무관</td>
+                    </tr>
+                    <tr>
+                        <th>희망연봉</th>
+                        <td>10,800만원</td>
+                    </tr>
+                    </table>
+                </td>
+            </tr>
+            </table>
         </div>
-        <div class="box mt-4">
-            <div class="row g-3 mb-4 font-090">
-                <div class="col-md-3 col-6 border-end text-center">
-                    <div class="text-mute">학력</div>
-                    <div class="mt-2">충남대</div>
-                    <div class="text-primary">대학교(4년)</div>
-                    <div class="text-primary">졸업</div>
-                </div>
-                <div class="col-md-3 col-6 border-end text-center">
-                    <div class="text-mute">경력</div>
-                    <div class="mt-2 text-primary"><span class="experienceDuration"></span>년</div>
-                </div>
-                <div class="col-md-3 col-6 border-end text-center">
-                    <div class="text-mute">학력</div>
-                    <div class="mt-2">충남대</div>
-                    <div class="text-primary">대학교(4년)</div>
-                    <div class="text-primary">졸업</div>
-                </div>
-                <div class="col-md-3 col-6 text-center">
-                    <div class="text-mute">학력</div>
-                    <div class="mt-2">충남대</div>
-                    <div class="text-primary">대학교(4년)</div>
-                    <div class="text-primary">졸업</div>
-                </div>
-            </div>
-            <div>
-                <div class="fw-bold border-bottom mb-1">Language</div>
-                <img src="https://img.shields.io/badge/PHP-777BB4?style=flat-square&logo=php&logoColor=white" alt="PHP Badge">
-                <img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=node.js&logoColor=white" alt="Node.js Badge">
-                <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python Badge">
-                <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" alt="JavaScript Badge">
-                <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white" alt="HTML5 Badge">
-                <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white" alt="CSS3 Badge">
-                <img src="https://img.shields.io/badge/Sass-CC6699?style=flat-square&logo=sass&logoColor=white" alt="Sass Badge">
-                
-                <div class="fw-bold border-bottom mt-3 mb-1">Database</div>
-                <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white" alt="MySQL Badge">
-                <img src="https://img.shields.io/badge/MariaDB-003545?style=flat-square&logo=mariadb&logoColor=white" alt="MariaDB Badge">
-                <img src="https://img.shields.io/badge/Microsoft%20SQL%20Server-CC2927?style=flat-square&logo=microsoft-sql-server&logoColor=white" alt="MSSQL Badge">
-                <img src="https://img.shields.io/badge/PostgreSQL-336791?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL Badge">
-                <img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white" alt="Redis Badge">
-                <img src="https://img.shields.io/badge/Elasticsearch-005571?style=flat-square&logo=elasticsearch&logoColor=white" alt="Elasticsearch Badge">
 
-                <div class="fw-bold border-bottom mt-3 mb-1">Framework</div>
-                <img src="https://img.shields.io/badge/Bootstrap-7952B3?style=flat-square&logo=bootstrap&logoColor=white" alt="Bootstrap Badge">
-                <img src="https://img.shields.io/badge/CodeIgniter-EF4223?style=flat-square&logo=codeigniter&logoColor=white" alt="CodeIgniter Badge">
-                <img src="https://img.shields.io/badge/Laravel-FF2D20?style=flat-square&logo=laravel&logoColor=white" alt="Laravel Badge">
-                <img src="https://img.shields.io/badge/Symfony-000000?style=flat-square&logo=symfony&logoColor=white" alt="Symfony Badge">
-                <img src="https://img.shields.io/badge/Express.js-000000?style=flat-square&logo=express&logoColor=white" alt="Express.js Badge">
-                <img src="https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js&logoColor=white" alt="Next.js Badge">
-                <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black" alt="React Badge">
-                <img src="https://img.shields.io/badge/Electron-47848F?style=flat-square&logo=electron&logoColor=white" alt="Electron Badge">
-                
-                <div class="fw-bold border-bottom mt-3 mb-1">OS & Cloud Computing</div>
-                <img src="https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black" alt="Linux Badge">
-                <img src="https://img.shields.io/badge/Ubuntu-E95420?style=flat-square&logo=ubuntu&logoColor=white" alt="Ubuntu Badge">
-                <img src="https://img.shields.io/badge/CentOS-262577?style=flat-square&logo=centos&logoColor=white" alt="CentOS Badge">
-                <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker Badge">
-                <img src="https://img.shields.io/badge/Amazon%20Web%20Services-232F3E?style=flat-square&logo=amazon-aws&logoColor=white" alt="Amazon Web Services Badge">
-                <img src="https://img.shields.io/badge/Vultr-007BFC?style=flat-square&logo=vultr&logoColor=white" alt="Vultr Badge">
 
-            </div>
-        </div>
-
-        <h2 class="font-150 mt-5">자기소개서</h2>
-        <div class="box">
-            <div>
-                <p class="my-1">저는 1999년, 주식회사 카페24의 초기 멤버로 웹 개발을 시작하였습니다. 그 당시, 인터넷 환경은 지금처럼 발전하지 않았고, 웹 서비스의 기초부터 확립해야 했습니다. 이러한 과정에서 저는 웹 개발의 기초부터 고급 기술에 이르기까지 폭넓은 경험을 쌓았습니다. 특히, PHP, Node.js, Python을 활용하여 웹 서비스 개발에 참여하며, 다양한 시스템과 기술을 다루었습니다. 이를 통해 웹 개발자로서의 기본기를 탄탄히 다질 수 있었고, 이후 풀스택 개발자로 성장할 수 있었습니다.</p>
-                <p class="my-1"></p>제 경력은 단순히 기술적인 능력에만 그치지 않았습니다. 서버, 데이터베이스, 클라우드 서비스 등 전체적인 기술 스택을 폭넓게 이해하고 다룰 수 있는 능력을 키웠습니다. 이를 바탕으로, 서비스의 설계부터 개발, 배포, 운영에 이르기까지 전반적인 업무를 처리할 수 있는 능력을 갖추게 되었습니다. 특히, 서버와 데이터베이스의 관리뿐만 아니라, 클라우드 서비스를 활용한 인프라 설계와 운영도 가능하여, 프로젝트를 처음부터 끝까지 안정적으로 이끌어갈 수 있습니다.</p>
-                <p class="my-1"></p>또한, 다양한 프로젝트를 진행하며 팀 구성과 운영 경험을 쌓았습니다. 효율적인 커뮤니케이션과 협업을 통해 프로젝트가 원활히 진행될 수 있도록 도왔으며, 이를 통해 팀 내에서 중요한 역할을 맡아 프로젝트를 성공적으로 이끌었습니다. 기술적인 부분을 넘어, 사업적 관점에서도 큰 관심을 두고 일을 해왔습니다. 아이디어의 실현을 위해 기획 및 설계를 진행하고, 마케팅 전략을 통해 서비스의 성장을 이끌어내는 과정에서 중요한 역할을 했습니다. 사업 운영에 필요한 전략적 사고와 기술적 해결책을 융합하여, 서비스의 성공적인 성장과 확장을 이끌어내는 데 기여했습니다.</p>
-                <p class="my-1"></p>저는 기술적인 역량뿐만 아니라, 비즈니스적 측면에서의 실력도 갖춘 풀스택 개발자로서, 기술적 문제를 해결하는 데 그치지 않고, 사업적 성장과 서비스의 성공을 위해 노력해 왔습니다. 다양한 기술과 경험을 바탕으로 귀사의 프로젝트에 큰 기여를 할 수 있을 것이라 확신하며, 앞으로도 계속해서 혁신적이고 효율적인 방법으로 문제를 해결하고, 서비스를 발전시키는 데 주력할 것입니다.</p>
-            </div>
-        </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script>
@@ -152,7 +367,176 @@
             if (experienceDuration) {
                 experienceDuration.textContent = totalYears;
             }
+
+            // PDF 변환 기능 추가
+            document.querySelector('.bi-filetype-pdf').addEventListener('click', function() {
+                const element = document.querySelector('.print-area');
+                const opt = {
+                    margin: 10,
+                    filename: 'profile_sungyong_eom.pdf',
+                    image: { type: 'jpeg', quality: 0.98 },
+                    html2canvas: { 
+                        scale: 2,
+                        useCORS: true,
+                        letterRendering: true
+                    },
+                    jsPDF: { 
+                        unit: 'mm', 
+                        format: 'a4', 
+                        orientation: 'portrait' 
+                    }
+                };
+
+                // 커서를 wait로 변경
+                document.body.style.cursor = 'wait';
+                
+                // PDF 생성
+                html2pdf().set(opt).from(element).save().then(function() {
+                    // PDF 생성 완료 후 커서를 기본값으로 변경
+                    document.body.style.cursor = 'default';
+                });
+            });
+
+            // PDF 아이콘에 커서 스타일과 툴팁 추가
+            const pdfIcon = document.querySelector('.bi-filetype-pdf');
+            pdfIcon.style.cursor = 'pointer';
+            pdfIcon.title = 'PDF로 저장';
+
+            // 프린트 기능 추가
+            document.querySelector('.bi-printer').addEventListener('click', function() {
+                const printContents = document.querySelector('.print-area').innerHTML;
+                const originalContents = document.body.innerHTML;
+                
+                // 프린트용 스타일 정의
+                const printStyles = `
+                    <style>
+                        @page {
+                            size: A4;
+                            margin: 15mm;
+                        }
+                        body { 
+                            background: #fff;
+                            width: 210mm;
+                            margin: 0 auto;
+                        }
+                        .box { 
+                            background: #fff; 
+                            padding: 1rem;
+                            margin-bottom: 1rem;
+                            page-break-inside: avoid;
+                        }
+                        @media print {
+                            html, body {
+                                width: 210mm;
+                                height: 297mm;
+                            }
+                            body { 
+                                font-size: 11pt;
+                                line-height: 1.3;
+                            }
+                            .font-150 { font-size: 14pt; font-weight: bold; }
+                            .font-130 { font-size: 12pt; }
+                            .font-120 { font-size: 11.5pt; }
+                            .font-090 { font-size: 10pt; }
+                            .box { 
+                                border: none;
+                                break-inside: avoid;
+                            }
+                            a { text-decoration: none; color: #000; }
+                            table { 
+                                page-break-inside: auto;
+                                font-size: 10pt;
+                            }
+                            tr { 
+                                page-break-inside: avoid; 
+                                page-break-after: auto;
+                            }
+                            thead { display: table-header-group; }
+                            tfoot { display: table-footer-group; }
+                            img { max-width: 100%; height: auto; }
+                            h2 { margin-top: 20pt; }
+                            p { margin: 5pt 0; }
+                            .mt-5 { margin-top: 15pt !important; }
+                            .mt-4 { margin-top: 12pt !important; }
+                            .mt-3 { margin-top: 10pt !important; }
+                            .mt-2 { margin-top: 7pt !important; }
+                            .mb-5 { margin-bottom: 15pt !important; }
+                            .py-3 { padding: 8pt 0 !important; }
+                        }
+                    </style>
+                `;
+
+                // 프린트용 HTML 생성
+                document.body.innerHTML = printStyles + '<div class="print-area">' + printContents + '</div>';
+                
+                window.print();
+                
+                // 원래 내용으로 복원
+                document.body.innerHTML = originalContents;
+                
+                // 이벤트 리스너들 다시 등록
+                initializeEventListeners();
+            });
+
+            // 프린터 아이콘에 커서 스타일과 툴팁 추가
+            const printerIcon = document.querySelector('.bi-printer');
+            printerIcon.style.cursor = 'pointer';
+            printerIcon.title = '인쇄하기';
         });
+
+        // 이벤트 리스너 초기화 함수
+        function initializeEventListeners() {
+            // PDF 변환 이벤트 리스너
+            document.querySelector('.bi-filetype-pdf').addEventListener('click', function() {
+                const element = document.querySelector('.print-area');
+                const opt = {
+                    margin: 10,
+                    filename: 'profile_sungyong_eom.pdf',
+                    image: { type: 'jpeg', quality: 0.98 },
+                    html2canvas: { 
+                        scale: 2,
+                        useCORS: true,
+                        letterRendering: true
+                    },
+                    jsPDF: { 
+                        unit: 'mm', 
+                        format: 'a4', 
+                        orientation: 'portrait' 
+                    }
+                };
+
+                document.body.style.cursor = 'wait';
+                html2pdf().set(opt).from(element).save().then(function() {
+                    document.body.style.cursor = 'default';
+                });
+            });
+
+            // 프린트 이벤트 리스너
+            document.querySelector('.bi-printer').addEventListener('click', function() {
+                // ... existing print code ...
+            });
+
+            // 경력 기간 계산
+            const startDate = new Date(1999, 7, 1);
+            const today = new Date();
+            const years = today.getFullYear() - startDate.getFullYear();
+            const months = today.getMonth() - startDate.getMonth();
+            let totalYears = years;
+            if (months < 0) totalYears--;
+            
+            const experienceDuration = document.querySelector('.experienceDuration');
+            if (experienceDuration) {
+                experienceDuration.textContent = totalYears;
+            }
+
+            // 아이콘 스타일 설정
+            const pdfIcon = document.querySelector('.bi-filetype-pdf');
+            const printerIcon = document.querySelector('.bi-printer');
+            pdfIcon.style.cursor = 'pointer';
+            printerIcon.style.cursor = 'pointer';
+            pdfIcon.title = 'PDF로 저장';
+            printerIcon.title = '인쇄하기';
+        }
     </script>
 </body>
 </html>
