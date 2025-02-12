@@ -57,11 +57,11 @@
                     </div>
                     <div class="col-md-6 col-12">
                         <span style="font-weight: bold;">휴대폰</span>
-                        <span style="margin-left: 0.25rem;"><a href="tel:010-5942-1002">010-5942-1002</a></span>                
+                        <span style="margin-left: 0.25rem;"><a href="tel:010-5942-1002" data-mask="010-5942-1002">010-****-1002</a> <i class="bi bi-eye"></i></span>                
                     </div>
                     <div class="col-md-6 col-12">
                         <span style="font-weight: bold;">이메일</span>
-                        <span style="margin-left: 0.25rem;"><a href="mailto:bluei98@gmail.com">bluei98@gmail.com</a></span>            
+                        <span style="margin-left: 0.25rem;"><a href="mailto:bluei98@gmail.com" data-mask="bluei98@gmail.com">blue***@gmail.com</a> <i class="bi bi-eye"></i></span>            
                     </div>
                     <div class="col-md-12 col-12">
                         <span style="font-weight: bold;">홈페이지</span>
@@ -537,6 +537,13 @@
             pdfIcon.title = 'PDF로 저장';
             printerIcon.title = '인쇄하기';
         }
+        document.querySelectorAll('.bi-eye').forEach(function(icon) {
+            icon.addEventListener('click', function() {
+                const span = this.previousElementSibling;
+                const mask = span.getAttribute('data-mask');
+                span.textContent = mask;
+            });
+        });
     </script>
 </body>
 </html>
