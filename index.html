@@ -9,6 +9,18 @@
     <style>
         body { background: #F2F4F7; font-size: 0.95rem; }
         .box { background: #fff; padding: 1.5rem; }
+        .blink {
+            animation: blink 2s linear infinite;
+            font-weight: 900;
+        }
+        
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        .font-090 { font-size: 90%; }
+        .font-150 { font-size: 150%; }
     </style>
 </head>
 
@@ -19,10 +31,15 @@
         <div class="box mt-5">
             <div class="row g-1">
                 <div class="col-12 mb-3">
-                    <div style="font-size: 1.5rem;">
-                        <b>엄성용</b>
-                        <span style="font-size: 70%; margin-left: 0.25rem; color: #777">남</span>
-                        <span style="font-size: 70%; margin-left: 0.25rem; color: #777">1979년</span>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div style="font-size: 1.5rem;">
+                            <b>엄성용</b>
+                            <span style="font-size: 70%; margin-left: 0.25rem; color: #777">남</span>
+                            <span style="font-size: 70%; margin-left: 0.25rem; color: #777">1979년</span>
+                        </div>
+                        <div>
+                            <span class="text-danger blink">구직중</span>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-12">
@@ -44,47 +61,97 @@
             </div>
         </div>
         <div class="box mt-4">
-            <div>
-                <div>
-                    <div class="fw-bold border-bottom">Language</div>
-                    <img src="https://img.shields.io/badge/PHP-777BB4?style=flat-square&logo=php&logoColor=white" alt="PHP Badge">
-                    <img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=node.js&logoColor=white" alt="Node.js Badge">
-                    <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python Badge">
-                    <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" alt="JavaScript Badge">
-                    <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white" alt="HTML5 Badge">
-                    <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white" alt="CSS3 Badge">
-                    <img src="https://img.shields.io/badge/Sass-CC6699?style=flat-square&logo=sass&logoColor=white" alt="Sass Badge">
-                    
-                    <div class="fw-bold border-bottom mt-3">Database</div>
-                    <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white" alt="MySQL Badge">
-                    <img src="https://img.shields.io/badge/MariaDB-003545?style=flat-square&logo=mariadb&logoColor=white" alt="MariaDB Badge">
-                    <img src="https://img.shields.io/badge/Microsoft%20SQL%20Server-CC2927?style=flat-square&logo=microsoft-sql-server&logoColor=white" alt="MSSQL Badge">
-                    <img src="https://img.shields.io/badge/PostgreSQL-336791?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL Badge">
-                    <img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white" alt="Redis Badge">
-                    <img src="https://img.shields.io/badge/Elasticsearch-005571?style=flat-square&logo=elasticsearch&logoColor=white" alt="Elasticsearch Badge">
-
-                    <div class="fw-bold border-bottom mt-3">Framework</div>
-                    <img src="https://img.shields.io/badge/Bootstrap-7952B3?style=flat-square&logo=bootstrap&logoColor=white" alt="Bootstrap Badge">
-                    <img src="https://img.shields.io/badge/CodeIgniter-EF4223?style=flat-square&logo=codeigniter&logoColor=white" alt="CodeIgniter Badge">
-                    <img src="https://img.shields.io/badge/Laravel-FF2D20?style=flat-square&logo=laravel&logoColor=white" alt="Laravel Badge">
-                    <img src="https://img.shields.io/badge/Symfony-000000?style=flat-square&logo=symfony&logoColor=white" alt="Symfony Badge">
-                    <img src="https://img.shields.io/badge/Express.js-000000?style=flat-square&logo=express&logoColor=white" alt="Express.js Badge">
-                    <img src="https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js&logoColor=white" alt="Next.js Badge">
-                    <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black" alt="React Badge">
-                    <img src="https://img.shields.io/badge/Electron-47848F?style=flat-square&logo=electron&logoColor=white" alt="Electron Badge">
-                    
-                    <div class="fw-bold border-bottom mt-3">OS & Cloud Computing</div>
-                    <img src="https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black" alt="Linux Badge">
-                    <img src="https://img.shields.io/badge/Ubuntu-E95420?style=flat-square&logo=ubuntu&logoColor=white" alt="Ubuntu Badge">
-                    <img src="https://img.shields.io/badge/CentOS-262577?style=flat-square&logo=centos&logoColor=white" alt="CentOS Badge">
-                    <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker Badge">
-                    <img src="https://img.shields.io/badge/Amazon%20Web%20Services-232F3E?style=flat-square&logo=amazon-aws&logoColor=white" alt="Amazon Web Services Badge">
-                    <img src="https://img.shields.io/badge/Vultr-007BFC?style=flat-square&logo=vultr&logoColor=white" alt="Vultr Badge">
+            <div class="row g-3 mb-4 font-090">
+                <div class="col-md-3 col-6 border-end text-center">
+                    <div class="text-mute">학력</div>
+                    <div class="mt-2">충남대</div>
+                    <div class="text-primary">대학교(4년)</div>
+                    <div class="text-primary">졸업</div>
                 </div>
+                <div class="col-md-3 col-6 border-end text-center">
+                    <div class="text-mute">경력</div>
+                    <div class="mt-2 text-primary"><span class="experienceDuration"></span>년</div>
+                </div>
+                <div class="col-md-3 col-6 border-end text-center">
+                    <div class="text-mute">학력</div>
+                    <div class="mt-2">충남대</div>
+                    <div class="text-primary">대학교(4년)</div>
+                    <div class="text-primary">졸업</div>
+                </div>
+                <div class="col-md-3 col-6 text-center">
+                    <div class="text-mute">학력</div>
+                    <div class="mt-2">충남대</div>
+                    <div class="text-primary">대학교(4년)</div>
+                    <div class="text-primary">졸업</div>
+                </div>
+            </div>
+            <div>
+                <div class="fw-bold border-bottom mb-1">Language</div>
+                <img src="https://img.shields.io/badge/PHP-777BB4?style=flat-square&logo=php&logoColor=white" alt="PHP Badge">
+                <img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=node.js&logoColor=white" alt="Node.js Badge">
+                <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python Badge">
+                <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" alt="JavaScript Badge">
+                <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white" alt="HTML5 Badge">
+                <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white" alt="CSS3 Badge">
+                <img src="https://img.shields.io/badge/Sass-CC6699?style=flat-square&logo=sass&logoColor=white" alt="Sass Badge">
+                
+                <div class="fw-bold border-bottom mt-3 mb-1">Database</div>
+                <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white" alt="MySQL Badge">
+                <img src="https://img.shields.io/badge/MariaDB-003545?style=flat-square&logo=mariadb&logoColor=white" alt="MariaDB Badge">
+                <img src="https://img.shields.io/badge/Microsoft%20SQL%20Server-CC2927?style=flat-square&logo=microsoft-sql-server&logoColor=white" alt="MSSQL Badge">
+                <img src="https://img.shields.io/badge/PostgreSQL-336791?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL Badge">
+                <img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white" alt="Redis Badge">
+                <img src="https://img.shields.io/badge/Elasticsearch-005571?style=flat-square&logo=elasticsearch&logoColor=white" alt="Elasticsearch Badge">
+
+                <div class="fw-bold border-bottom mt-3 mb-1">Framework</div>
+                <img src="https://img.shields.io/badge/Bootstrap-7952B3?style=flat-square&logo=bootstrap&logoColor=white" alt="Bootstrap Badge">
+                <img src="https://img.shields.io/badge/CodeIgniter-EF4223?style=flat-square&logo=codeigniter&logoColor=white" alt="CodeIgniter Badge">
+                <img src="https://img.shields.io/badge/Laravel-FF2D20?style=flat-square&logo=laravel&logoColor=white" alt="Laravel Badge">
+                <img src="https://img.shields.io/badge/Symfony-000000?style=flat-square&logo=symfony&logoColor=white" alt="Symfony Badge">
+                <img src="https://img.shields.io/badge/Express.js-000000?style=flat-square&logo=express&logoColor=white" alt="Express.js Badge">
+                <img src="https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js&logoColor=white" alt="Next.js Badge">
+                <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black" alt="React Badge">
+                <img src="https://img.shields.io/badge/Electron-47848F?style=flat-square&logo=electron&logoColor=white" alt="Electron Badge">
+                
+                <div class="fw-bold border-bottom mt-3 mb-1">OS & Cloud Computing</div>
+                <img src="https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black" alt="Linux Badge">
+                <img src="https://img.shields.io/badge/Ubuntu-E95420?style=flat-square&logo=ubuntu&logoColor=white" alt="Ubuntu Badge">
+                <img src="https://img.shields.io/badge/CentOS-262577?style=flat-square&logo=centos&logoColor=white" alt="CentOS Badge">
+                <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker Badge">
+                <img src="https://img.shields.io/badge/Amazon%20Web%20Services-232F3E?style=flat-square&logo=amazon-aws&logoColor=white" alt="Amazon Web Services Badge">
+                <img src="https://img.shields.io/badge/Vultr-007BFC?style=flat-square&logo=vultr&logoColor=white" alt="Vultr Badge">
 
             </div>
         </div>
+
+        <h2 class="font-150 mt-5">자기소개서</h2>
+        <div class="box">
+            <div>
+                저는 1999년 주식회사 카페24의 초기 멤버로 웹 개발을 시작했습니다. 그 동안 PHP, Node.js, Python을 활용한 웹 서비스 개발에 참여하며 경력을 쌓았습니다. 서버, 데이터베이스, 클라우드 서비스에 이르기까지 폭넓은 기술 스택을 다룰 수 있는 풀스택 개발자로 성장하였고, 서비스의 설계부터 운영까지 전반적인 업무를 처리할 수 있는 능력을 갖추게 되었습니다.
+                또한, 팀 구성과 운영을 통해 효율적으로 프로젝트를 진행할 수 있으며, 사업을 통해 아이디어를 구체화하고, 마케팅을 통해 서비스를 성장시키는 데에도 능숙합니다.
+                기술적인 부분뿐만 아니라 비즈니스적 측면에서도 실력을 쌓아왔기에, 귀사의 프로젝트에 큰 기여를 할 수 있을 것이라 확신합니다.
+            </div>
+        </div>
     </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const startDate = new Date(1999, 7, 1); // 1999년 8월 1일 (월은 0부터 시작)
+            const today = new Date();
+            
+            const years = today.getFullYear() - startDate.getFullYear();
+            const months = today.getMonth() - startDate.getMonth();
+            
+            let totalYears = years;
+            if (months < 0) {
+                totalYears--;
+            }
+            
+            const experienceDuration = document.querySelector('.experienceDuration');
+            if (experienceDuration) {
+                experienceDuration.textContent = totalYears;
+            }
+        });
+    </script>
 </body>
 </html>
